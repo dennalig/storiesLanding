@@ -19,13 +19,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '#_($lei&$z%sl9vf&)_m$$0wg7=yrg@u8mxs2y5-g_qm@@nz7r'
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ.get('Stories_Landing_Settings_Secret_Key') #environ var
+SECRET_KEY = str(SECRET_KEY) # we must convert the returned key into a string in order for it to work
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
