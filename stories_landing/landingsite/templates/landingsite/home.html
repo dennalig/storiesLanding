@@ -1,0 +1,37 @@
+{% extends "landingsite/base.html" %}
+
+{% block cont%}
+Home 
+{% endblock cont%}
+<!-- title-->
+{% block content %}
+
+<div class="logo" style="text-align: center;"> 
+  
+    <h1> <a href="."> LOGO</a></h1>
+</div>
+    <h1 style="color:red"></h1> 
+   
+{% endblock content %}
+
+{% block pageContent%}
+{% for post in posts %}
+
+<!-- <h1>{{ post.author }} posted in <i style="color: black;">{{ post.communityName }}</i></h1>
+<p> {{post.content}} </p>
+<h6> {{ post.date_posted }}</h6> -->
+
+
+
+<article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2"a>{{ post.author }} posted in <i style="color: black" >{{ post.communityName }}</i></a>
+        <small class="text-muted">{{ post.date_posted }}</small>
+      </div>
+      <p class="article-content">{{ post.content }}</p>
+    </div>
+    
+</article>
+{% endfor %}
+{% endblock pageContent%} 
