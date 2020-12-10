@@ -3,15 +3,15 @@
 
 <head>
   <title> Stories Landing | 
-    {% block cont%}{% endblock %}
-    </title>
+    {% block cont%}{% endblock %} 
+    </title> <!--page indicator content-->
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-  <link rel="stylesheet" type="text/css" href="{% static 'landingsite/main.css' %}"/>
+    <link rel="stylesheet" href="{% static 'landingsite/main.css' %}"/>
 
   
   </head>
@@ -19,21 +19,26 @@
   
 
 <body>
+
+  <link rel="stylesheet" href="{% static 'landingsite/main.css' %}"/>
+
+
     <div class="jumbotron jumbotron-fluid" style="height: 250px; background-image: url('../media/default.png'); width:2000px;height:400px;">
       <div class="wrap">
         <div class="search; align-right">
            <input type="text" class="searchTerm" placeholder="What are you looking for?">
            <button type="submit" class="searchButton">
-             <i class="fa fa-search"></i>
+             <i class="fa fa-search"></i> <!-- search button-->
           </button>
         </div>
-     </div>
+     </div> <!--end jumbotron div -->
+
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" style="color: #000000;" onclick="closeNav()">☰</a>
       <!---  <link rel="stylesheet" href="sidebar.css"> -->
         <div class="sidebar-header" style="text-align:center;font-size:35px;font-family:Georgia, 'Times New Roman', Times, serif">My Stuff</div>
 
-        <link rel="stylesheet" href="sidebar.css"> <!-- figure out issue with accessing static .css files-->
+ <!-- figure out issue with accessing static .css files-->
         <a style="background-color:red;border-bottom: solid 1px white;" href="#">Movies</a>
         <a style="background-color:rgb(0, 119, 255);border-bottom: solid 1px white;" href="#">TV Shows</a>
         <a style="background-color:rgb(208, 255, 0);border-bottom: solid 1px white;" href="#">Video Games</a>
@@ -66,13 +71,6 @@
         document.getElementById("main").style.marginLeft= "0";
       }
       </script>
-
-    
-
-
-
-
-
 
   <h1 > 
 {% block content %}{% endblock %}
