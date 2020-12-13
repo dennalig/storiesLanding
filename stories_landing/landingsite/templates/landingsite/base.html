@@ -13,6 +13,8 @@
 
   <link rel="stylesheet" type="text/css" href="{% static 'landingsite/main.css' %}"/>
 
+
+
   
   </head>
 
@@ -20,14 +22,25 @@
 
 <body>
     <div class="jumbotron jumbotron-fluid" style="height: 250px; background-image: url('../media/default.png'); width:2000px;height:400px;">
+    <button class="openbtn" style="float: right"onclick="openNav()">☰ </button>  <!-- button-->
+
+    <!--button script-->
+    <script src="{%static '/landingsite/sidebarScript.js' %}"></script> <!-- ref to static js file on navbar function-->
+
+      
+  <div class="logo" style="text-align: center;"> 
+    <h1><a href="{% url 'landingsite-home'%}">LOGO</a></h1> <!-- clicking logo takes one to home -->
+   </div>
+
       <div class="wrap">
         <div class="search; align-right">
-           <input type="text" class="searchTerm" placeholder="What are you looking for?">
+           <input type="text" class="searchTerm" size="50" placeholder="What are you looking for?"><br>
            <button type="submit" class="searchButton">
              <i class="fa fa-search"></i>
           </button>
         </div>
      </div>
+     
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" style="color: #000000;" onclick="closeNav()">☰</a>
        <link rel="stylesheet" href="sidebar.css">
@@ -37,6 +50,7 @@
         <a style="background-color:rgb(208, 255, 0);border-bottom: solid 1px white;" href="#">Video Games</a>
         <a style="background-color:rgb(0, 255, 64);border-bottom: solid 1px white;" href="#">Novels</a>
         <a style="background-color:rgb(255, 196, 0);border-bottom: solid 1px white;" href="#">Comics</a>
+        <a style="background-color:rgb(140, 0, 255);border-bottom: solid 1px white;" href="#">Podcast/Radio Stories</a>
 
         <a style="text-align:center;font-size:35px;font-family:Georgia, 'Times New Roman', Times, serif;color:gray" href="#">Login</a>
         <a style="text-align:center;font-size:35px;font-family:Georgia, 'Times New Roman', Times, serif; color:gray" href="#">Sign Up</a>
@@ -46,23 +60,6 @@
        
 
       </div>
-      
-  
-        <button class="openbtn" style="float: right"onclick="openNav()">☰ </button>  
-        
-      
-      
-      <script>
-      function openNav() {
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-      }
-      
-      function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-      }
-      </script>
 
     
 
